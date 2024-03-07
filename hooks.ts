@@ -1,20 +1,23 @@
 import { useQuery } from '@tanstack/react-query';
-import { Movie } from './types';
 
 export const useMovies = () => {
   const fetchMovies = async () => {
-    const url = 'https://moviesverse1.p.rapidapi.com/get-trending-trailers';
+    const url = 'https://api.themoviedb.org/3/trending/all/week?language=en-US';
     const options = {
       method: 'GET',
       headers: {
-        'X-RapidAPI-Key': 'eb1683ad4fmsh1e5f7ef02531e65p1d7308jsn05457098d291',
-        'X-RapidAPI-Host': 'moviesverse1.p.rapidapi.com'
+        accept: 'application/json',
+        Authorization:
+          'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlODc0YjhjYTg2ZTJmM2NkZjMxMWU0OTk2MWZjYWQ1MyIsInN1YiI6IjYyMDk0MzAxMWQ3OGYyMDA5ZTlkNDlmZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.S_3NsOvA7M4VV3erSkdOhEYJ_1p65WQ6H86G8jHMhc0'
       }
     };
 
     const response = await fetch(url, options);
     const result = await response.json();
-    return result.trailers as Movie[];
+
+    const delay = Math.floor(Math.random() * 901) + 100;
+    await new Promise((resolve) => setTimeout(resolve, delay));
+    return result.results;
   };
 
   const { data, isLoading, error } = useQuery({

@@ -1,5 +1,4 @@
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
@@ -9,8 +8,6 @@ import Home from '../screens/home/Home';
 import Watchlist from '../screens/watchlist/Watchlist';
 import { AntDesign, MaterialCommunityIcons } from '@expo/vector-icons';
 
-const Stack = createNativeStackNavigator();
-
 const Tab = createMaterialTopTabNavigator();
 
 const Navigator = ({ children }: any) => {
@@ -18,8 +15,6 @@ const Navigator = ({ children }: any) => {
     <NavigationContainer>
       <Tab.Navigator
         initialRouteName="Home"
-        style={{ height: 175 }}
-        //@ts-ignore
         screenOptions={{
           tabBarActiveTintColor: 'orange',
           tabBarInactiveTintColor: 'gray',
@@ -37,12 +32,13 @@ const Navigator = ({ children }: any) => {
               <AntDesign
                 name="home"
                 size={26}
-                color={focused ? 'orange' : 'black'}
+                color={focused ? 'orange' : 'white'}
               />
             ),
             tabBarLabel: () => null,
             tabBarStyle: {
-              height: 75
+              height: 75,
+              backgroundColor: 'black'
             }
           }}
         />
@@ -54,12 +50,13 @@ const Navigator = ({ children }: any) => {
               <MaterialCommunityIcons
                 name="table-eye"
                 size={26}
-                color={focused ? 'orange' : 'black'}
+                color={focused ? 'orange' : 'white'}
               />
             ),
             tabBarLabel: () => null,
             tabBarStyle: {
-              height: 75
+              height: 75,
+              backgroundColor: 'black'
             }
           }}
         />
@@ -71,12 +68,13 @@ const Navigator = ({ children }: any) => {
               <AntDesign
                 name="user"
                 size={26}
-                color={focused ? 'orange' : 'black'}
+                color={focused ? 'orange' : 'white'}
               />
             ),
             tabBarLabel: () => null,
             tabBarStyle: {
-              height: 75
+              height: 75,
+              backgroundColor: 'black'
             }
           }}
         />

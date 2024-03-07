@@ -1,11 +1,17 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Text } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const Account = ({ navigation }: any) => {
   const insets = useSafeAreaInsets();
 
-  return <View style={styles({}).container}></View>;
+  return (
+    <View style={[styles({}).container]}>
+      <View style={{ marginTop: insets.top }}>
+        <Text>Account</Text>
+      </View>
+    </View>
+  );
 };
 
 const styles = (props: any) =>

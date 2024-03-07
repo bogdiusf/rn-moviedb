@@ -10,12 +10,16 @@ export type Movie = {
 
 type StoreState = {
   movieList: Movie[];
+  modalVisible: boolean;
+  setModalVisible: (value: boolean) => void;
   setMovieList: (items: Movie[]) => void;
 };
 
 const useStore = create<StoreState>((set) => ({
   movieList: [],
-  setMovieList: (items) => set({ movieList: items })
+  setMovieList: (items) => set({ movieList: items }),
+  modalVisible: false,
+  setModalVisible: (value) => set({ modalVisible: value })
 }));
 
 export default useStore;

@@ -1,8 +1,17 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const Watchlist = () => {
-  return <View style={styles.container}></View>;
+  const insets = useSafeAreaInsets();
+
+  return (
+    <View style={[styles.container]}>
+      <View style={{ marginTop: insets.top }}>
+        <Text>Watchlist</Text>
+      </View>
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({
