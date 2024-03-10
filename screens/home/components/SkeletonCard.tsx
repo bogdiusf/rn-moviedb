@@ -23,7 +23,7 @@ const SkeletonCard = () => {
 
   const background = animatedValue.interpolate({
     inputRange: [0, 1],
-    outputRange: ['#E6E6E6', '#F3F3F3']
+    outputRange: ['#000000', '#652595']
   });
 
   return (
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     gap: 12,
     padding: 12,
-    backgroundColor: 'white',
+    backgroundColor: '#FFFACD',
     borderRadius: 12
   },
   title: {

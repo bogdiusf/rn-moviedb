@@ -10,16 +10,16 @@ export type Movie = {
 
 type StoreState = {
   movieList: Movie[];
-  modalVisible: boolean;
-  setModalVisible: (value: boolean) => void;
   setMovieList: (items: Movie[]) => void;
+  isLogged: boolean;
+  setIsLogged: (value: boolean) => void;
 };
 
 const useStore = create<StoreState>((set) => ({
   movieList: [],
   setMovieList: (items) => set({ movieList: items }),
-  modalVisible: false,
-  setModalVisible: (value) => set({ modalVisible: value })
+  isLogged: false,
+  setIsLogged: (value) => set({ isLogged: value })
 }));
 
 export default useStore;

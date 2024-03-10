@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { View, StyleSheet, Text, ImageBackground } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const Watchlist = () => {
@@ -7,9 +7,16 @@ const Watchlist = () => {
 
   return (
     <View style={[styles.container]}>
-      <View style={{ marginTop: insets.top }}>
-        <Text>Watchlist</Text>
-      </View>
+      <ImageBackground
+        source={{
+          uri: 'https://thumbs.dreamstime.com/b/purple-blue-textured-background-wallpaper-app-background-layout-dark-gradient-colors-vintage-distressed-elegant-78118630.jpg'
+        }}
+        style={styles.image}
+      >
+        <View style={{ marginTop: insets.top, padding: 24 }}>
+          <Text style={{ color: 'white' }}>Watchlist</Text>
+        </View>
+      </ImageBackground>
     </View>
   );
 };
@@ -18,8 +25,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#E7F5FF',
-    padding: 24,
     gap: 32
+  },
+  image: {
+    flex: 1
   }
 });
 

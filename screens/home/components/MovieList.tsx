@@ -21,7 +21,8 @@ const MovieList = () => {
           onChangeText={(e) => setSearchText(e)}
           value={searchText}
           style={styles.input}
-          placeholder="Search"
+          placeholder="Search..."
+          placeholderTextColor="black"
         />
       </View>
 
@@ -37,14 +38,6 @@ const MovieList = () => {
             ))
           : [0, 1, 2].map((item) => <SkeletonCard key={item} />)}
       </View>
-
-      {/* <FlatList
-        data={filteredData}
-        renderItem={({ item }: { item: Movie }) => (
-          <Text>{item.title ?? item.name}</Text>
-        )}
-        keyExtractor={(item) => item.id.toString()}
-      /> */}
     </>
   );
 };
@@ -61,7 +54,8 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 32,
-    fontWeight: '600'
+    fontWeight: '600',
+    color: 'white'
   },
   input: {
     height: 40,
@@ -71,10 +65,10 @@ const styles = StyleSheet.create({
     padding: 10,
     shadowColor: '#000', // Shadow color
     shadowOffset: {
-      width: 0,
-      height: 1 // Offset along the Y-axis
+      width: 5,
+      height: 10 // Offset along the Y-axis
     },
-    shadowOpacity: 0.05, // Shadow opacity
+    shadowOpacity: 0.5, // Shadow opacity
     shadowRadius: 3.84 // Shadow radius
   },
   chipsContainer: {
